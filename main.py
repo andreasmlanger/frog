@@ -34,10 +34,7 @@ Utils
 
 
 def resource_path(relative_path):
-    if hasattr(sys, '_MEIPASS'):
-        # noinspection PyProtectedMember
-        return os.path.join(sys._MEIPASS, relative_path)
-    return os.path.join(os.path.abspath('.'), relative_path)
+    return str(os.path.join(os.path.dirname(__file__), relative_path))
 
 
 def load_image(f, scale=1.0):
